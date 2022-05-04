@@ -1,8 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { useParams, Link } from 'react-router-dom'
 import { getAllPosts } from '../modules/PostManager.js'
-// import { PostCard } from './PostCard.js'
+import { PostCard } from './PostCard.js'
 // import { PostDetail } from './PostDetail'
 
 export const Posts = () => {
