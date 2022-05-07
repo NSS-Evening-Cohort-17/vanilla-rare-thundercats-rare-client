@@ -22,10 +22,16 @@ export const CategoryList = () => {
 //   }, []);
 
   return (
-    <div className="container-cards">
-      {categories.map(category => <CategoryCard key={category.id} category={category} />)}
-    </div>
-    );
+    <>
+      <section className="category-list">
+        <h1>Categories</h1>
+        <div className="container-cards">
+          {categories.map(category => <CategoryCard key={category.id} category={category} />)}
+        </div>
+      </section>
+    </>
+  );
+  
 };
 
 
