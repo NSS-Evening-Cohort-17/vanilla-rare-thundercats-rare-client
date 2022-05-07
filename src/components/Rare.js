@@ -4,6 +4,7 @@ import { ApplicationViews } from "./ApplicationViews"
 import { NavBar } from "./nav/NavBar"
 import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
+import { CategoryList } from "./category/CategoryList"
 
 export const Rare = () => {
   const [token, setTokenState] = useState(localStorage.getItem('token'))
@@ -34,6 +35,11 @@ export const Rare = () => {
       <NavBar token={token} setToken={setToken} />
       <Register token={token} setToken={setToken} />
     </Route>
+
+    <Route path="/categories" exact>
+      <CategoryList token={token} setToken={setToken} />
+    </Route>
+  
 
   </>
 }
