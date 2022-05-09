@@ -6,6 +6,7 @@ import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
 import { CategoryList } from "./category/CategoryList"
 import { Posts } from "./posts/Posts"
+import { CreatePost } from "./posts/CreatePost"
 
 export const Rare = () => {
   const [token, setTokenState] = useState(localStorage.getItem('token'))
@@ -42,8 +43,11 @@ export const Rare = () => {
     </Route>
   
     <Route path ="/" exact>
-      <NavBar token={token} setToken={setToken} />
       <Posts token={token} setToken={setToken} />
+    </Route>
+
+    <Route path ="/newpost" exact>
+      <CreatePost token={token} setToken={setToken} />
     </Route>
 
   </>

@@ -1,12 +1,11 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
 import "./CreatePost.css"
-import { getAllCategories } from "./modules/CategoryManager.js"
+import { getAllCategories } from "../modules/CategoryManager.js"
 
-export const CreatePost = () => {
-    const [currentUser, setCurrentUser] = useState(JSON.parse(localStorage.getItem("kennel_customer")));
-    // still not quite sure how to get current user. What is a token?
+export const CreatePost = ( {token} ) => {
+    const [currentUser, setCurrentUser] = useState(parseInt(token));
     const [categories, setCategories] = useState([]);
-    const [selectedCategory, setSelectedCategory] = useState();
+    const [selectedCategoryId, setSelectedCategoryId] = useState(0);
     const [title, setTitle] = useState("");
     const [image_url, setImage_url] = useState("");
     const [content, setContent] = useState("");
@@ -26,15 +25,14 @@ export const CreatePost = () => {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                user_id: currentUser.id,
-                category_id: selectedCategory,
+                user_id: currentUser,
+                category_id: parseInt(selectedCategoryId),
                 title: title,
                 image_url: image_url,
                 content: content
-                // what is "approved"? should it be in the form?
             })
         }).then(response => response.json()).then(
-        alert(`Title added to database!`));
+        alert(`Posted!`));
     }
 
     return (
@@ -43,13 +41,14 @@ export const CreatePost = () => {
             <form onSubmit={handleSubmit}>
                     <div className="form-input">
                         <label className="input-label">Category:</label>
-                        <select value={category_id} onChange={(e) => setSelectedCategory(e.target.value)}>
-                            {categories.map((category) => <option key={category}>{category}</option> )}
+                        <select value={selectedCategoryId} onChange={(e) => setSelectedCategoryId(e.target.value)}>
+                            <option>Select Category</option>
+                            {categories.map((category) => <option key={category.id} value={category.id}>{category.label}</option> )}
                         </select>
                     </div>
                     <div className="form-input">
                         <label className="input-label">Title:</label>
-                        <input type="number" value={title} onChange={(e) => setTitle(e.target.value)}></input>
+                        <input type="text" value={title} onChange={(e) => setTitle(e.target.value)}></input>
                     </div>
                     <div className="form-input">
                         <label className="input-label">Image URL:</label>

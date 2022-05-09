@@ -11,23 +11,9 @@ export const CategoryList = () => {
         })
     }, []);
 
-//   const getCategories = () => {
-//     return getAllCategories().then(categoriesFromAPI => {
-//       setCategories(categoriesFromAPI)
-//     });
-//   };
-
-//   useEffect(() => {
-//     getCategories();
-//   }, []);
-
   return (
     <div className="container-cards">
       {categories.map(category => <CategoryCard key={category.id} category={category} />)}
     </div>
     );
 };
-
-
-
-  
