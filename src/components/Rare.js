@@ -37,18 +37,20 @@ export const Rare = () => {
       <NavBar token={token} setToken={setToken} />
       <Register token={token} setToken={setToken} />
     </Route>
-
-    <Route path="/categories" exact>
-      <CategoryList token={token} setToken={setToken} />
-    </Route>
   
     <Route path ="/" exact>
       <Posts token={token} setToken={setToken} />
     </Route>
 
+<<<<<<< HEAD
     <Route path ="/newpost" exact>
       <CreatePost token={token} setToken={setToken} />
     </Route>
 
+=======
+    <Route path="/categories" exact>
+      <CategoryList token={token} setToken={setToken} />
+    </Route>
+>>>>>>> 49696b2429fc8773a7490434559def79f5a3d50a
   </>
 }
