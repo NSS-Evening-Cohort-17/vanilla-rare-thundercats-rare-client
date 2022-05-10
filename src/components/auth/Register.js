@@ -26,7 +26,7 @@ export const Register = ({setToken}) => {
         password: password.current.value,
         bio: bio.current.value
       }
-
+      console.log(newUser)
       registerUser(newUser)
         .then(res => {
           if ("valid" in res && res.valid) {
