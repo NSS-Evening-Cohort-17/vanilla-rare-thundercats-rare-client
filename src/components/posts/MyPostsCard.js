@@ -1,7 +1,7 @@
 import React from "react";
 import "./PostCard.css"
 
-export const PostCard = ( {post} ) => {
+export const MyPostsCard = ( {post, handleDeletePost, handleEditPost} ) => {
 
     return (
         <div className="card">
@@ -11,6 +11,8 @@ export const PostCard = ( {post} ) => {
                 <h3><span className="post__title">{post.title}</span></h3>
                 <img src={post.image_url} />
                 <p>{post.content}</p>
+                <button type="button" className="edit-btn">Edit</button>
+                <button type="button" className="delete-btn" onClick={() => handleDeletePost(post.id)}>Delete</button>
             </div>
         </div>
     )

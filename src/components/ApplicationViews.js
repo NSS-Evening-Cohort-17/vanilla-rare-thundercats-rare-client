@@ -8,6 +8,9 @@ import { TagForm } from "./tag/TagForm"
 
 export const ApplicationViews = ({token, setToken}) => {
   return (
+<<<<<<< HEAD
+    <div></div>
+=======
     <>
     {/* <UserList></UserList> */}
     <h1 >Welcome to Rare Publishing</h1>
@@ -21,5 +24,6 @@ export const ApplicationViews = ({token, setToken}) => {
       </Route>
 
     </>
+>>>>>>> 15a8d31f9f3be4f1765e6dd9e930610f245e937d
   )
 }

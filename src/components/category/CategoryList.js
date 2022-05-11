@@ -38,9 +38,4 @@ export const CategoryList = () => {
       </section>
     </>
   );
-  
 };
-
-
-
-  
