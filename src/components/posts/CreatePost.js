@@ -3,7 +3,7 @@ import "./CreatePost.css"
 import { getAllCategories } from "../modules/CategoryManager.js"
 
 export const CreatePost = ( {token} ) => {
-    const [currentUser, setCurrentUser] = useState(parseInt(token));
+    const [currentUserId, setCurrentUserId] = useState(parseInt(token));
     const [categories, setCategories] = useState([]);
     const [selectedCategoryId, setSelectedCategoryId] = useState(0);
     const [title, setTitle] = useState("");
@@ -25,7 +25,7 @@ export const CreatePost = ( {token} ) => {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                user_id: currentUser,
+                user_id: currentUserId,
                 category_id: parseInt(selectedCategoryId),
                 title: title,
                 image_url: image_url,
