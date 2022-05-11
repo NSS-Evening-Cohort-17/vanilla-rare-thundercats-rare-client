@@ -5,6 +5,7 @@ import { NavBar } from "./nav/NavBar"
 import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
 import { CategoryList } from "./category/CategoryList"
+import { CategoryForm } from "./category/CategoryForm"
 import { Posts } from "./posts/Posts"
 
 export const Rare = () => {
@@ -42,8 +43,12 @@ export const Rare = () => {
       <Posts token={token} setToken={setToken} />
     </Route>
 
-    <Route path="/categories" exact>
+    <Route exact path="/categories" >
       <CategoryList token={token} setToken={setToken} />
+    </Route>
+
+    <Route exact path="/categories/create">
+      <CategoryForm token={token} setToken={setToken} />
     </Route>
   </>
 }
