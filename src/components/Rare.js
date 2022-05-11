@@ -53,8 +53,7 @@ export const Rare = () => {
     <Route path ="/new-post" exact>
       <CreatePost token={token} setToken={setToken} />
     </Route>
-
-    <Route path="/categories" exact>
+    
     <Route exact path="/categories" >
       <CategoryList token={token} setToken={setToken} />
     </Route>
