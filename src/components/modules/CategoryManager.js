@@ -20,3 +20,8 @@ export const addCategory = (newCategory) => {
 })
     .then(response => response.json())
 }
+
+export const deleteCategory = (id) => {
+  return fetch(`${remoteURL}/categories/${id}`, {
+    method: "DELETE"})
+}    
