@@ -11,10 +11,6 @@ export const ApplicationViews = ({token, setToken}) => {
     <h1 >Welcome to Rare Publishing</h1>
 
       <Route>
-        <Route path="/categories" element={<CategoryList />} />
-      </Route>
-
-      <Route>
         <Route path="/Tag Management" element={<TagList />} />
       </Route>
 
