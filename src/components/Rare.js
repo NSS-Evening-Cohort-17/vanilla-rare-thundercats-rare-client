@@ -38,7 +38,6 @@ export const Rare = () => {
     </Route>
   
     <Route path ="/" exact>
-      <NavBar token={token} setToken={setToken} />
       <Posts token={token} setToken={setToken} />
     </Route>
 
