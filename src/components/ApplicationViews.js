@@ -1,7 +1,7 @@
 import React from "react"
 import { Route } from "react-router-dom"
 import { UserCard } from "./user/UserCard"
-//import { UserList } from "./user/UserList"
+import { UserList } from "./user/UserList"
 import { CategoryList } from "./category/CategoryList"
 import { TagList } from "./tag/TagList"
 import { TagForm } from "./tag/TagForm"
@@ -11,10 +11,6 @@ export const ApplicationViews = ({token, setToken}) => {
     <>
     {/* <UserList></UserList> */}
     <h1 >Welcome to Rare Publishing</h1>
-
-      <Route>
-        <Route path="/categories" element={<CategoryList />} />
-      </Route>
 
       <Route>
         <Route path="/Tag Management" element={<TagList />} />
