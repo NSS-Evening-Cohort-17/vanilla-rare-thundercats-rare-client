@@ -1,0 +1,9 @@
+
+button {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    background-color: #f5f5f5;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin: 0.5%;
+}
