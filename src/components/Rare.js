@@ -6,6 +6,7 @@ import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
 import { CategoryList } from "./category/CategoryList"
 import { CategoryForm } from "./category/CategoryForm"
+import { CategoryEditForm } from "./category/CategoryEditForm"
 import { Posts } from "./posts/Posts"
 import { TagList } from "./tag/TagList"
 import { TagForm } from "./tag/TagForm"
@@ -48,8 +49,12 @@ export const Rare = () => {
       <CategoryList token={token} setToken={setToken} />
     </Route>
 
-    <Route exact path="/categories/create">
+    <Route path="/categories/create">
       <CategoryForm token={token} setToken={setToken} />
+    </Route>
+
+    <Route path="/categories/:categoryId/edit">
+      <CategoryEditForm token={token} setToken={setToken} />
     </Route>
 
     <Route path="/tags" exact>
