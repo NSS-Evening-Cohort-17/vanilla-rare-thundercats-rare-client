@@ -1,4 +1,5 @@
-import React from "react";
+import { React } from "react"
+import { Link, useParams } from "react-router-dom"
 import "./PostCard.css"
 
 export const PostCard = ( {post} ) => {
@@ -8,7 +9,11 @@ export const PostCard = ( {post} ) => {
             <div className="card-content">
                 <img src={post.user_image} />
                 <p>{post.username}</p>
-                <h3><span className="post__title">{post.title}</span></h3>
+                <h3>
+                    <Link to={`/posts/${post.id}`}>
+                        <span className="post__title">{post.title}</span>
+                    </Link>
+                </h3>
                 <img src={post.image_url} />
                 <p>{post.content}</p>
             </div>

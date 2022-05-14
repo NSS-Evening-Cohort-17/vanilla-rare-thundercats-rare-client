@@ -11,6 +11,7 @@ import { CreatePost } from "./posts/CreatePost"
 import { MyPosts } from "./posts/MyPosts"
 import { TagList } from "./tag/TagList"
 import { TagForm } from "./tag/TagForm"
+import { PostDetails } from "./posts/PostDetails"
 
 export const Rare = () => {
   const [token, setTokenState] = useState(localStorage.getItem('token'))
@@ -52,6 +53,10 @@ export const Rare = () => {
 
     <Route path ="/new-post" exact>
       <CreatePost token={token} setToken={setToken} />
+    </Route>
+
+    <Route path="/posts/:postId">
+      <PostDetails token={token} setToken={setToken}/>
     </Route>
     
     <Route exact path="/categories" >
