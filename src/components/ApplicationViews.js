@@ -20,6 +20,10 @@ export const ApplicationViews = ({token, setToken}) => {
         <TagForm />
       </Route>
 
+      <Route path="/tags/edit/:tagId(\d+)">
+        <TagForm />
+      </Route>
+
     </>
   )
 }

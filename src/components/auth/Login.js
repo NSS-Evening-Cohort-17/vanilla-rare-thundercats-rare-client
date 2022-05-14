@@ -6,7 +6,7 @@ export const Login = ({ setToken }) => {
   const username = useRef()
   const password = useRef()
   const history = useHistory()
-  const [isUnsuccessful, setisUnsuccessful] = useState(false)
+  const [isUnsuccessful, setIsUnsuccessful] = useState(false)
 
   const handleLogin = (e) => {
     e.preventDefault()
@@ -22,7 +22,7 @@ export const Login = ({ setToken }) => {
         history.push("/")
       }
       else {
-        setisUnsuccessful(true)
+        setIsUnsuccessful(true)
       }
     })
   }
