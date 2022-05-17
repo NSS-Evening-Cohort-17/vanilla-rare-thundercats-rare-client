@@ -11,7 +11,9 @@ export const CategoryCard = ({ category, handleDeleteCategory }) => {
               { category.label }
           </Link>    
         </h3>
-        <button type="button" className="edit-btn">Edit</button>
+        <Link to={`/categories/${category.id}/edit`}>
+          <button type="button" className="edit-btn" onClick={() => (category.id)}>Edit</button>
+        </Link>
         <button type="button" className="delete-btn" onClick={() => handleDeleteCategory(category.id)}>Delete</button>
       </div>
   </div>

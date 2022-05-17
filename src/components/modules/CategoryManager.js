@@ -21,6 +21,17 @@ export const addCategory = (newCategory) => {
     .then(response => response.json())
 }
 
+export const updateCategory = category => {
+  return fetch(`${remoteURL}/categories/${category.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(category)
+  })
+    .then(getAllCategories)
+}
+
 export const deleteCategory = (id) => {
   return fetch(`${remoteURL}/categories/${id}`, {
     method: "DELETE"})
