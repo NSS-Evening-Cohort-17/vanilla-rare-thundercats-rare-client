@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { CommentForm } from "../comments/CommentForm.js";
 import CommentList from "../comments/CommentList.js";
 import { getAllPosts } from '../modules/PostManager.js'
 import { PostCard } from './PostCard.js'
@@ -17,7 +18,6 @@ export const Posts = () => {
     return (
         <div>
             <h1>Posts</h1>
-            <CommentList/>
             <div>
                 <section>
                     {posts.map(post => <PostCard key={post.id} post={post} />)}

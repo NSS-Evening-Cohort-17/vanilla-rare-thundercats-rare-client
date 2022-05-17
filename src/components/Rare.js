@@ -12,6 +12,7 @@ import { CreatePost } from "./posts/CreatePost"
 import { MyPosts } from "./posts/MyPosts"
 import { TagList } from "./tag/TagList"
 import { TagForm } from "./tag/TagForm"
+import { CommentPage } from "./comments/CommentPage"
 import { PostDetails } from "./posts/PostDetails"
 
 export const Rare = () => {
@@ -46,6 +47,10 @@ export const Rare = () => {
   
     <Route path ="/" exact>
       <Posts token={token} setToken={setToken} />
+    </Route>
+
+    <Route path ="/posts/:id" exact>
+      <CommentPage token={token} setToken={setToken} />
     </Route>
 
     <Route path ="/my-posts" exact>
